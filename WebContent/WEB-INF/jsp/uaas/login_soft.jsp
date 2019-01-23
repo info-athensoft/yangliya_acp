@@ -64,10 +64,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
                     	
-                        <h1>职商会管理控制台</h1>
+                        <h1>杨丽娅舞蹈学校管理控制台</h1>
                         <img class="login-logo" src="${webapp_name}/assets/pages/img/login/logo.png" width="40%"/>
                         <p> 版本 1.0  </p>
-                        <p>   弘扬先辈精神，发挥宝贵经验，为谋求及维护华人专业人士和商家的群体利益及共同发展，提供一个务实、专业、互助的服务平台，努力提升华人在加拿大的整体影响力。 </p> 
+                        <p>   蒙特利尔最有影响力的华人舞蹈培训  </p> 
                         <!-- <form action="javascript:;" class="login-form" method="post">  -->
                         <form action="/acp/index.html" class="login-form" method="post">
                             <div class="alert alert-danger display-hide">
@@ -131,7 +131,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="col-xs-7 bs-reset">
                                 <div class="login-copyright text-right">
-                                    <p>2018 &copy; ACP powered by <a href="http://www.athensoft.com"> Informatique Athensoft </a></p>
+                                    <p>2019 &copy; ACP powered by <a href="http://www.athensoft.com"> Informatique Athensoft </a></p>
                                 </div>
                             </div>
                         </div>

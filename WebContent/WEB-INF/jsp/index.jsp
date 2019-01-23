@@ -94,8 +94,8 @@
                     <!-- BEGIN THEME PANEL -->
                     <!-- END THEME PANEL -->
                     
-                    <h1 class="page-title"> 蒙特利尔职商会管理后台
-                        <small>版本号 1.0 发布日期 2018-06</small>
+                    <h1 class="page-title"> 杨丽娅舞蹈学校管理后台
+                        <small>版本号 1.0 发布日期 2019-01</small>
                     </h1>
                     <!-- 
                     <div class="page-bar">

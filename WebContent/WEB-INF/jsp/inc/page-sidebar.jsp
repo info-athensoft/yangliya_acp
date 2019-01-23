@@ -26,17 +26,20 @@
 			</li>
 			
 			
+			
 			<li>
 				<a href="javascript:;">
 				<i class="icon-badge"></i>
-				<span class="title">会员管理</span>
+				<span class="title">班级管理</span>
 				<span class="arrow "></span>
 				</a>
+								
+				
 				<ul class="sub-menu">
 					
 					<li>
 						<a href="${webapp_name}/member/list.html">
-						 会员管理</a>
+						 班级列表</a>
 					</li>
 					<!--
 					<li>
@@ -57,6 +60,71 @@
 					</li> -->
 				</ul>
 			</li>
+			
+			
+			
+			
+			<li>
+				<a href="javascript:;">
+				<i class="icon-badge"></i>
+				<span class="title">学员管理</span>
+				<span class="arrow "></span>
+				</a>
+								
+				
+				<ul class="sub-menu">
+					
+					<li>
+						<a href="${webapp_name}/member/list.html">
+						 学员列表</a>
+					</li>
+					<!--
+					<li>
+						<a href="${webapp_name}/member/list.html">
+						 会员信息</a>
+					</li> 
+					<li>
+						<a href="${webapp_name}/member/list.html">
+						 会员申请</a>
+					</li>
+					<li>
+						<a href="${webapp_name}/member/list.html">
+						 会员续约</a>
+					</li>
+					<li>
+						<a href="${webapp_name}/member/list.html">
+						 状态审核</a>
+					</li> -->
+				</ul>
+			</li>
+			
+			
+			<li>
+				<a href="javascript:;">
+				<i class="icon-badge"></i>
+				<span class="title">新闻管理</span>
+				<span class="arrow "></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="${webapp_name}/events/news/list.html">
+						 新闻列表</a>
+					</li>
+					<li>
+						<a href="${webapp_name}/events/news/create.html">
+						新增新闻</a>
+					</li>
+					<li>
+						<a href="${webapp_name}/events/news/list.html">
+						 修改新闻</a>
+					</li>
+					<li>
+						<a href="${webapp_name}/events/news/deletelist.html">
+						 删除新闻</a>
+					</li>
+				</ul>
+			</li>
+			
 			
 			<li>
 				<a href="javascript:;">
@@ -94,31 +162,6 @@
 				</ul>
 			</li>
 			
-			<li>
-				<a href="javascript:;">
-				<i class="icon-badge"></i>
-				<span class="title">新闻管理</span>
-				<span class="arrow "></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<a href="${webapp_name}/events/news/list.html">
-						 新闻列表</a>
-					</li>
-					<li>
-						<a href="${webapp_name}/events/news/create.html">
-						新增新闻</a>
-					</li>
-					<li>
-						<a href="${webapp_name}/events/news/list.html">
-						 修改新闻</a>
-					</li>
-					<li>
-						<a href="${webapp_name}/events/news/deletelist.html">
-						 删除新闻</a>
-					</li>
-				</ul>
-			</li>
 			
 			<li>
 				<a href="javascript:;">
