@@ -1,16 +1,19 @@
 package com.athensoft.school.entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class SchoolReview {
 	private long globalId;
 	private String targetCode;
 	private String reviewUUID;
 	private long entityId;
+	private String entityCode;
 	private String acctName;
-	private LocalDateTime reviewDateTime;
+	private String reviewer;
+	private Date reviewDateTime;
 	private int reviewStatus;
 	private String reviewContent;
+	
 	
 	public long getGlobalId() {
 		return globalId;
@@ -42,10 +45,10 @@ public class SchoolReview {
 	public void setAcctName(String acctName) {
 		this.acctName = acctName;
 	}
-	public LocalDateTime getReviewDateTime() {
+	public Date getReviewDateTime() {
 		return reviewDateTime;
 	}
-	public void setReviewDateTime(LocalDateTime reviewDateTime) {
+	public void setReviewDateTime(Date reviewDateTime) {
 		this.reviewDateTime = reviewDateTime;
 	}
 	public int getReviewStatus() {
@@ -60,10 +63,26 @@ public class SchoolReview {
 	public void setReviewContent(String reviewContent) {
 		this.reviewContent = reviewContent;
 	}
+	
+	public String getReviewer() {
+		return reviewer;
+	}
+	public void setReviewer(String reviewer) {
+		this.reviewer = reviewer;
+	}
+	
+	public String getEntityCode() {
+		return entityCode;
+	}
+	public void setEntityCode(String entityCode) {
+		this.entityCode = entityCode;
+	}
 	@Override
 	public String toString() {
 		return "SchoolReview [globalId=" + globalId + ", targetCode=" + targetCode + ", reviewUUID=" + reviewUUID
-				+ ", entityId=" + entityId + ", acctName=" + acctName + ", reviewDateTime=" + reviewDateTime
-				+ ", reviewStatus=" + reviewStatus + ", reviewContent=" + reviewContent + "]";
+				+ ", entityId=" + entityId + ", entityCode=" + entityCode + ", acctName=" + acctName + ", reviewer="
+				+ reviewer + ", reviewDateTime=" + reviewDateTime + ", reviewStatus=" + reviewStatus
+				+ ", reviewContent=" + reviewContent + "]";
 	}
+	
 }
