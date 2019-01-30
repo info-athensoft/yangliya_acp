@@ -3,6 +3,23 @@ package com.athensoft.school.entity;
 import java.util.Date;
 
 public class SchoolReview {
+public static final int UNKNOWN = 0;
+	
+	/**
+	 * the status of review, constant value, APPROVED = 1
+	 */
+	public static final int APPROVED = 1;
+	
+	/**
+	 * the status of review, constant value, PENDING = 2
+	 */
+	public static final int PENDING = 2;
+	
+	/**
+	 * the status of review, constant value, REJECTED = 3
+	 */
+	public static final int REJECTED = 3;
+	
 	private long globalId;
 	private String targetCode;
 	private String reviewUUID;
