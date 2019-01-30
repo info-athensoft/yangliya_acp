@@ -19,4 +19,7 @@
 	<context:component-scan
 		base-package="com.athensoft.tag.service">
 	</context:component-scan>
+	<context:component-scan
+		base-package="com.athensoft.school.service">
+	</context:component-scan>
 </beans>
