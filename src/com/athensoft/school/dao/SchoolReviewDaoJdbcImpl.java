@@ -59,7 +59,7 @@ public class SchoolReviewDaoJdbcImpl extends BaseDaoJdbcImpl implements SchoolRe
 
 	@Override
 	public List<SchoolReview> findByTargetCode(String targetCode) {
-		String sql = "select * from " + TABLE + " where event_uuid = :target_code";
+		String sql = "select * from " + TABLE + " where target_code = :targetCode";
 
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("targetCode", targetCode);
@@ -185,6 +185,7 @@ public class SchoolReviewDaoJdbcImpl extends BaseDaoJdbcImpl implements SchoolRe
 			x.setTargetCode(rs.getString("target_code"));
 			x.setReviewUUID(rs.getString("review_uuid"));
 			x.setEntityId(rs.getLong("entity_id"));
+			x.setEntityCode(rs.getString("entity_code"));
 			x.setReviewContent(rs.getString("review_content"));
 			x.setAcctName(rs.getString("acct_name"));
 			x.setReviewStatus(rs.getInt("review_status"));

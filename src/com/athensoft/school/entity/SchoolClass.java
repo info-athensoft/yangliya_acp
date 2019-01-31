@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class SchoolClass {
 	private long globalId;
-	private int classId;
+	private long classId;
 	private String classCode;
 	private String classType;
 	private int classLevel;
@@ -21,10 +21,10 @@ public class SchoolClass {
 	public void setGlobalId(long globalId) {
 		this.globalId = globalId;
 	}
-	public int getClassId() {
+	public long getClassId() {
 		return classId;
 	}
-	public void setClassId(int classId) {
+	public void setClassId(long classId) {
 		this.classId = classId;
 	}
 	public String getClassCode() {

@@ -1,5 +1,7 @@
 package com.athensoft.content.event.service;
 
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -186,8 +188,10 @@ public class NewsService {
 
 			String strEventClass = (listNews.get(i).getEventClass()).trim();
 			field4 = getEventClass(strEventClass);
-
-			field5 = listNews.get(i).getModifyDate() + "";
+			
+			final String DATE_FORMAT = "yyyy-MM-dd hh:mm";
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT);
+			field5 = listNews.get(i).getModifyDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime().format(formatter) + "";
 			field6 = listNews.get(i).getViewNum() + "";
 
 			int intEventStatus = listNews.get(i).getEventStatus();

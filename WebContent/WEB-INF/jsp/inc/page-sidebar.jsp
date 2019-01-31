@@ -33,12 +33,9 @@
 				<span class="title">班级管理</span>
 				<span class="arrow "></span>
 				</a>
-								
-				
 				<ul class="sub-menu">
-					
 					<li>
-						<a href="${webapp_name}/member/list.html">
+						<a href="${webapp_name}/school/class/list.html">
 						 班级列表</a>
 					</li>
 					<!--
@@ -60,20 +57,13 @@
 					</li> -->
 				</ul>
 			</li>
-			
-			
-			
-			
 			<li>
 				<a href="javascript:;">
 				<i class="icon-badge"></i>
 				<span class="title">学员管理</span>
 				<span class="arrow "></span>
 				</a>
-								
-				
 				<ul class="sub-menu">
-					
 					<li>
 						<a href="${webapp_name}/member/list.html">
 						 学员列表</a>
