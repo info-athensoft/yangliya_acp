@@ -6,7 +6,7 @@ public class SchoolClass {
 	private long globalId;
 	private long classId;
 	private String classCode;
-	private String classType;
+	private int classType;
 	private int classLevel;
 	private int classClass;
 	private String className;
@@ -14,6 +14,7 @@ public class SchoolClass {
 	private LocalDate createDate;
 	private int maxPerson;
 	private String classDesc;
+	private int classStatus;
 	
 	public long getGlobalId() {
 		return globalId;
@@ -33,10 +34,10 @@ public class SchoolClass {
 	public void setClassCode(String classCode) {
 		this.classCode = classCode;
 	}
-	public String getClassType() {
+	public int getClassType() {
 		return classType;
 	}
-	public void setClassType(String classType) {
+	public void setClassType(int classType) {
 		this.classType = classType;
 	}
 	public int getClassLevel() {
@@ -81,13 +82,22 @@ public class SchoolClass {
 	public void setClassDesc(String classDesc) {
 		this.classDesc = classDesc;
 	}
+	
+	public int getClassStatus() {
+		return classStatus;
+	}
+	public void setClassStatus(int classStatus) {
+		this.classStatus = classStatus;
+	}
 	@Override
 	public String toString() {
 		return "SchoolClass [globalId=" + globalId + ", classId=" + classId + ", classCode=" + classCode
 				+ ", classType=" + classType + ", classLevel=" + classLevel + ", classClass=" + classClass
 				+ ", className=" + className + ", classOwner=" + classOwner + ", createDate=" + createDate
-				+ ", maxPerson=" + maxPerson + ", classDesc=" + classDesc + "]";
+				+ ", maxPerson=" + maxPerson + ", classDesc=" + classDesc + ", classStatus=" + classStatus + "]";
 	}
+	
+	
 	
 	
 }

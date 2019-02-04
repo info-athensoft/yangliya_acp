@@ -56,4 +56,5 @@ public class SchoolClassController {
 		log.info("leaving... /school/class/list");
 		return model;
 	}
+
 }

@@ -38,8 +38,8 @@ public class SchoolReviewService {
 	 * @param eventUUID the eventUUID of schoolReview object
 	 * @return the list of schoolReview objects
 	 */
-	public List<SchoolReview> getSchoolReviewByTargetCode(String targetCode){
-		return schoolReviewDao.findByTargetCode(targetCode);
+	public List<SchoolReview> getSchoolReviewByClassCode(String classCode){
+		return schoolReviewDao.findByTargetCode(classCode);
 	}
 	
 	/**

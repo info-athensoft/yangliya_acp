@@ -172,7 +172,7 @@
                                         <h3 class="font-blue-sharp">
                                             <span data-counter="counterup" data-value="${adpostTotalCount}"></span>
                                         </h3>
-                                        <small>总广告数</small>
+                                        <small>总班级数</small>
                                     </div>
                                     <div class="icon">
                                         <i class="icon-basket"></i>
@@ -198,7 +198,7 @@
                                         <h3 class="font-purple-soft">
                                             <span data-counter="counterup" data-value="${memberTotalCount}"></span>
                                         </h3>
-                                        <small>总会员数</small>
+                                        <small>总学员数</small>
                                     </div>
                                     <div class="icon">
                                         <i class="icon-user"></i>

@@ -18,7 +18,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>Athensoft | Events - News Listing</title>
+        <title>Athensoft | School - Class List</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         
@@ -164,15 +164,15 @@
                                             <span> </span>
                                             <select class="table-group-action-input form-control input-inline input-small input-sm" name="groupOption">
                                                 <option value="">请选择...</option>
-												<option value="1">发布</option>
-												<option value="2">待发布</option>
-												<option value="3">删除</option>
-												<option value="4">过期</option>
-												<option value="5">审查</option>
+												<option value="1">已创建</option>
+												<option value="2">招生中</option>
+												<option value="3">开课中</option>
+												<option value="4">已结业</option>
+												<option value="5">已解散</option>
                                             </select>
                                             <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 更改状态</button>
                                         </div>
-                                        <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_eventNewsList">
+                                        <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_schoolClassList">
                                             <thead>
                                                 <tr role="row" class="heading">
                                                     <th width="1%">
@@ -182,37 +182,39 @@
                                                             <span></span>
                                                         </label>
                                                     </th>
-                                                    <th width="8%">新闻编号</th>
-													<th width="25%">新闻标题</th>
-													<th width="8%">作者</th>
-													<th width="8%">类别</th>
-													<th width="15%">更新日期</th>
-													<th width="6%">浏览数</th>
+                                                    <th width="10%">班级编码</th>
+													<th width="8%">班级类型</th>
+													<th width="8%">班级名称</th>
+													<th width="8%">指导老师</th>
+													<th width="8%">创建日期</th>
+													<th width="6%">人数</th>
 													<th width="8%">当前状态</th>
 													<th width="8%">操作</th>
                                                 </tr>
                                                 <tr role="row" class="filter">
 													<td></td>
-													<td><input type="text" class="form-control form-filter input-sm" name="event_uuid" id="eventUUID"></td>
-													<td><input type="text" class="form-control form-filter input-sm" name="event_title" id="eventTitle"></td>
-													<td><input type="text" class="form-control form-filter input-sm" name="event_author" id="eventAuthor"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="classCode" id="classCode"></td>
+													<!-- <td><input type="text" class="form-control form-filter input-sm" name="classType" id="classType"></td>  -->
 													<td>
-														<select class="form-control form-filter input-sm" name="event_class" id="eventClass">
+														<select class="form-control form-filter input-sm" name="classType" id="classType">
 															<option value="0">选择...</option>
-															<option value="1">普通</option>
-															<option value="2">新</option>
-															<option value="3">热</option>
+															<option value="1">成人</option>
+															<option value="2">未成年人</option>
+															<option value="3">其它</option>
 														</select>
 													</td>
+													<td><input type="text" class="form-control form-filter input-sm" name="className" id="className"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="classOwner" id="classOwner"></td>
+													
 													<td>
 														<div class="input-group date date-picker margin-bottom-5" data-date-format="yyyy-mm-dd">
-															<input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From" id="postDatetimeFrom">
+															<input type="text" class="form-control form-filter input-sm" readonly name="create_date_from" placeholder="From" id="createDateFrom">
 															<span class="input-group-btn">
 															<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
 															</span>
 														</div>
 														<div class="input-group date date-picker" data-date-format="yyyy-mm-dd">
-															<input type="text" class="form-control form-filter input-sm" readonly name="product_created_to" placeholder="To" id="postDatetimeTo">
+															<input type="text" class="form-control form-filter input-sm" readonly name="create_date_to" placeholder="To" id="createDateTo">
 															<span class="input-group-btn">
 															<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
 															</span>
@@ -220,18 +222,18 @@
 													</td>
 													<td>
 														<div class="margin-bottom-5">
-															<input type="text" class="form-control form-filter input-sm" name="viewNum_from" placeholder="From" id="viewNumFrom">
+															<input type="text" class="form-control form-filter input-sm" name="maxPersonFrom" placeholder="From" id="maxPersonFrom">
 														</div>
-														<input type="text" class="form-control form-filter input-sm" name="viewNum_to" placeholder="To" id="viewNumTo"/>
+														<input type="text" class="form-control form-filter input-sm" name="maxPersonTo" placeholder="To" id="maxPersonTo"/>
 													</td>
 													<td>
 														<select class="form-control form-filter input-sm" name="event_status" id="eventStatus">
 															<option value="0">选择...</option>
-															<option value="1">已发布</option>
-															<option value="2">待发布</option>
-															<option value="3">已删除</option>
-															<option value="4">已过期</option>
-															<option value="5">审查中</option>
+															<option value="1">已创建</option>
+															<option value="2">招生中</option>
+															<option value="3">开课中</option>
+															<option value="4">已结业</option>
+															<option value="5">已解散</option>
 														</select>
 													</td>
 													<td>
@@ -301,11 +303,11 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/global-validate.js"></script>
-<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/event/event-news.js"></script>
-<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/event/event-news-list.js"></script>
+<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/school/school-class.js"></script>
+<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/school/school-class-list.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-EventNewsList.init();
+SchoolClassList.init();
 </script>
 </body>
 

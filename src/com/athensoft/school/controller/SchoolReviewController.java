@@ -79,7 +79,7 @@ public class SchoolReviewController {
 		log.info("entering /school/review/targetcode");
 
 		// data
-		List<SchoolReview> listSchoolReview = schoolReviewService.getSchoolReviewByTargetCode(targetCode);
+		List<SchoolReview> listSchoolReview = schoolReviewService.getSchoolReviewByClassCode(targetCode);
 		log.info("Length of SchoolReview entries: " + listSchoolReview == null ? "NULL" : listSchoolReview.size());
 
 		String[][] data = getData(listSchoolReview);
