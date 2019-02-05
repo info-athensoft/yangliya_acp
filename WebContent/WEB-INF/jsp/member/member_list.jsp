@@ -19,7 +19,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>ZSHMTL | Member - Member Listing</title>
+        <title>YANGLIYA | School - Student Listing</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         
@@ -93,7 +93,7 @@
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
                     
-                    <h1 class="page-title"> 会员管理 <small></small></h1>
+                    <h1 class="page-title">教务系统  <small>学员管理</small></h1>
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
 							<li>
@@ -102,11 +102,11 @@
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="${webapp_name}/member/list.html">会员管理</a>
+								<a href="${webapp_name}/member/list.html">学员管理</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="#">会员列表</a>
+								<a href="#">学员列表</a>
 							</li>
 						</ul>
                         
@@ -118,7 +118,7 @@
                             <div class="portlet light">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        	会员列表 <span class="caption-helper"></span></div>
+                                        	学员列表 <span class="caption-helper"></span></div>
                                 </div>
                                 <div class="portlet-body">
                                     <div class="table-container">

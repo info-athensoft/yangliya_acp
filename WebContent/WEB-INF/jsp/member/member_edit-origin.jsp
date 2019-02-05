@@ -20,7 +20,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>YANGLIYA | School - Student Edit</title>
+        <title>Athensoft | Member - Member Edit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #2 for edit product" name="description" />
@@ -91,7 +91,7 @@
                     <!-- BEGIN THEME PANEL -->
                     
                     <!-- END THEME PANEL -->
-                    <h1 class="page-title">教务系统  <small>学员管理</small></h1>
+                    <h1 class="page-title">会员系统 <small> 管理会员信息与状态</small></h1>
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
 						<li>
@@ -100,11 +100,11 @@
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
-							<a href="${webapp_name}/member/list.html">学员管理</a>
+							<a href="${webapp_name}/member/list.html">会员系统</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
-							<a href="#">编辑学员信息</a>
+							<a href="#">会员信息管理</a>
 						</li>
 					</ul>
 					
@@ -116,7 +116,7 @@
                                 <div class="portlet">
                                     <div class="portlet-title">
                                         <div class="caption">
-                                            	学员信息管理<span class="caption-helper"> </span> </div>
+                                            	会员信息管理<span class="caption-helper"> </span> </div>
                                         <div class="actions btn-set">
                                             <button type="button" name="back" class="btn btn-secondary-outline" onclick="backToMemberList();">
                                                 <i class="fa fa-angle-left"></i> 返回</button>
@@ -131,7 +131,7 @@
                                         <div class="tabbable-bordered">
                                             <ul class="nav nav-tabs">
                                                 <li class="active">
-                                                    <a href="#tab_general" data-toggle="tab"> 学员信息</a>
+                                                    <a href="#tab_general" data-toggle="tab"> 会员信息</a>
                                                 </li>
                                                 <!-- 
                                                 <li>
@@ -157,38 +157,37 @@
 													</div>  -->
 													
 													<div class="form-group">
-													<label class="col-md-2 control-label">学员账户: <span class="required"> * </span>
+													<label class="col-md-2 control-label">会员账户: <span class="required"> * </span>
 														</label>
 														<div class="col-md-4">
 															<input type="text" class="form-control" id="acctName" name="acctName" value="${memberObject.acctName}" readonly="readonly">
 														</div>
 													</div>
 													
-													<!-- 
 													<div class="form-group">
-														<label class="col-md-2 control-label">当前学员等级:
+														<label class="col-md-2 control-label">当前会员等级:
 														</label>
 														<div class="col-md-4">
 															<select class="table-group-action-input form-control input-medium" id="memberLevel_2" name="memberLevel_2" disabled="disabled">
 																<option value="1" ${memberObject.memberLevel == '1' ? 'selected' : ''}>请选择...</option>
-																<option value="2" ${memberObject.memberLevel == '2' ? 'selected' : ''}>普通学员 </option>
-																<option value="3" ${memberObject.memberLevel == '3' ? 'selected' : ''}>VIP学员 </option>
-																<option value="4" ${memberObject.memberLevel == '4' ? 'selected' : ''}>核心学员</option>
+																<option value="2" ${memberObject.memberLevel == '2' ? 'selected' : ''}>普通会员 </option>
+																<option value="3" ${memberObject.memberLevel == '3' ? 'selected' : ''}>VIP会员 </option>
+																<option value="4" ${memberObject.memberLevel == '4' ? 'selected' : ''}>核心会员</option>
 															</select>
 														</div>
 														
-														<label class="col-md-2 control-label"><span class="custom-operation-em">管理学员等级: </span><span class="required">
+														<label class="col-md-2 control-label"><span class="custom-operation-em">管理会员等级: </span><span class="required">
 														* </span>
 														</label>
 														<div class="col-md-4">
 															<select class="table-group-action-input form-control input-medium" id="memberLevel" name="memberLevel">
 																<option value="1" ${memberObject.memberLevel == '1' ? 'selected' : ''}>请选择...</option>
-																<option value="2" ${memberObject.memberLevel == '2' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;普通学员 </option>
-																<option value="3" ${memberObject.memberLevel == '3' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;VIP学员 </option>
-																<option value="4" ${memberObject.memberLevel == '4' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;核心学员</option>
+																<option value="2" ${memberObject.memberLevel == '2' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;普通会员 </option>
+																<option value="3" ${memberObject.memberLevel == '3' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;VIP会员 </option>
+																<option value="4" ${memberObject.memberLevel == '4' ? 'selected' : ''}>(变更到)&nbsp;&nbsp;核心会员</option>
 															</select>
 														</div>
-													</div>  -->
+													</div>
 													
 													
 													<div class="form-group">
@@ -225,7 +224,7 @@
 													</div>
 													
 													<div class="form-group">
-														<label class="col-md-2 control-label">学员报名日: <span class="required">* </span>
+														<label class="col-md-2 control-label">会员申请日: <span class="required">* </span>
 														</label>
 														<div class="col-md-4">
 															<div class="input-group input-large date-picker input-daterange" data-date="2018-01-01" data-date-format="yyyy-mm-dd">
@@ -235,7 +234,6 @@
 														</div>
 													</div>
 													
-													<!-- 
 													<div class="form-group">
 														<label class="col-md-2 control-label">预审通过日: <span class="required">* </span>
 														</label>
@@ -245,12 +243,10 @@
 															</div>
 															<span class="help-block"></span>
 														</div>
-													</div>  -->
+													</div>
 													
-													
-													<!-- 
 													<div class="form-group">
-														<label class="col-md-2 control-label">学员激活日: <span class="required">* </span>
+														<label class="col-md-2 control-label">会员激活日: <span class="required">* </span>
 														</label>
 														<div class="col-md-4">
 															<div class="input-group input-large date-picker input-daterange" data-date="2018-01-01" data-date-format="yyyy-mm-dd">
@@ -258,11 +254,10 @@
 															</div>
 															<span class="help-block"></span>
 														</div>
-													</div>  -->
+													</div>
 													
-													<!-- 
 													<div class="form-group">
-														<label class="col-md-2 control-label">学员到期日: <span class="required">* </span>
+														<label class="col-md-2 control-label">会员到期日: <span class="required">* </span>
 														</label>
 														<div class="col-md-4">
 															<div class="input-group input-large date-picker input-daterange" data-date="2018-01-01" data-date-format="yyyy-mm-dd">
@@ -270,7 +265,7 @@
 															</div>
 															<span class="help-block"></span>
 														</div>
-													</div>  -->
+													</div>
 													
 													
 													<div class="form-group">

@@ -10,6 +10,7 @@
 <!-- ENDS page variables -->
 
 <!DOCTYPE html>
+
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
@@ -18,7 +19,7 @@
     <!-- BEGIN HEAD -->
     <head>
         <meta charset="utf-8" />
-        <title>Athensoft | School - Class List</title>
+        <title>ZSHMTL | Member - Member Listing</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         
@@ -91,40 +92,24 @@
                 <!-- BEGIN CONTENT BODY -->
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
-                    <!-- BEGIN THEME PANEL -->
-                    <!-- END THEME PANEL -->
-                    <h1 class="page-title"> 教务系统 <small>班级管理</small></h1>
+                    
+                    <h1 class="page-title"> 会员管理 <small></small></h1>
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
 							<li>
-								<i class="fa fa-home"></i>
+								
 								<a href="${webapp_name}/index.html">首页</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="${webapp_name}/school/class/list.html">班级管理</a>
+								<a href="${webapp_name}/member/list.html">会员管理</a>
 								<i class="fa fa-angle-right"></i>
 							</li>
 							<li>
-								<a href="#">班级列表</a>
+								<a href="#">会员列表</a>
 							</li>
 						</ul>
-						<!-- 
-                        <div class="page-toolbar">
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                                    <i class="fa fa-angle-down"></i>
-                                </button>
-                                <ul class="dropdown-menu pull-right" role="menu">
-                                    <li><a href="#"><i class="icon-bell"></i> Action</a></li>
-                                    <li><a href="#"><i class="icon-shield"></i> Another action</a></li>
-                                    <li><a href="#"><i class="icon-user"></i> Something else here</a></li>
-                                    <li class="divider"> </li>
-                                    <li><a href="#"><i class="icon-bag"></i> Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                         -->
+                        
                     </div>
                     <!-- END PAGE HEADER-->
                     <div class="row">
@@ -133,30 +118,7 @@
                             <div class="portlet light">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        	班级列表 <span class="caption-helper"></span></div>
-                                    <div class="actions">
-                                        <a href="${webapp_name}/events/news/create.html" class="btn btn-circle btn-info">
-                                            <i class="fa fa-plus"></i><span class="hidden-xs"> 新增班级 </span>
-                                        </a>
-                                        <!-- 
-                                        <div class="btn-group">
-                                            <a class="btn btn-circle btn-default dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                                <i class="fa fa-share"></i>
-                                                <span class="hidden-xs"> Tools </span>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <div class="dropdown-menu pull-right">
-                                            	<ul>
-                                                <li><a href="javascript:;"> Export to Excel </a></li>
-                                                <li><a href="javascript:;"> Export to CSV </a></li>
-                                                <li><a href="javascript:;"> Export to XML </a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="javascript:;"> Print Invoices </a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                         -->
-                                    </div>
+                                        	会员列表 <span class="caption-helper"></span></div>
                                 </div>
                                 <div class="portlet-body">
                                     <div class="table-container">
@@ -164,15 +126,16 @@
                                             <span> </span>
                                             <select class="table-group-action-input form-control input-inline input-small input-sm" name="groupOption">
                                                 <option value="">请选择...</option>
-												<option value="1">已创建</option>
-												<option value="2">招生中</option>
-												<option value="3">开课中</option>
-												<option value="4">已结业</option>
-												<option value="5">已解散</option>
+												<option value="1">申请已提交</option>
+												<option value="2">通过预审</option>
+												<option value="3">激活</option>
+												<option value="4">取消激活</option>
+												<option value="5">审查</option>
+												<option value="6">禁止</option>
                                             </select>
-                                            <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 更改状态</button>
+                                            <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 状态修改</button>
                                         </div>
-                                        <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_schoolClassList">
+                                        <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_memberList">
                                             <thead>
                                                 <tr role="row" class="heading">
                                                     <th width="1%">
@@ -182,65 +145,50 @@
                                                             <span></span>
                                                         </label>
                                                     </th>
-                                                    <th width="10%">班级编码</th>
-													<th width="8%">班级类型</th>
-													<th width="8%">班级名称</th>
-													<th width="8%">指导老师</th>
-													<th width="8%">创建日期</th>
-													<th width="6%">人数</th>
+													<th width="8%">会员账号</th>
+													<th width="8%">中文姓名</th>
+													<th width="8%">英法姓名</th>
+													<th width="8%">性别</th>
+													<th width="8%">电话1</th>
+													<th width="8%">电话2</th>
+													<th width="8%">微信号</th>
+													<th width="8%">电子邮件</th>
 													<th width="8%">当前状态</th>
 													<th width="8%">操作</th>
                                                 </tr>
                                                 <tr role="row" class="filter">
 													<td></td>
-													<td><input type="text" class="form-control form-filter input-sm" name="classCode" id="classCode"></td>
-													<!-- <td><input type="text" class="form-control form-filter input-sm" name="classType" id="classType"></td>  -->
+													<td><input type="text" class="form-control form-filter input-sm" name="acctName" id="acctName"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="name1" id="name1"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="name2" id="name2"></td>
 													<td>
-														<select class="form-control form-filter input-sm" name="classType" id="classType">
-															<option value="0">选择...</option>
-															<option value="1">成人</option>
-															<option value="2">未成年人</option>
-															<option value="3">其它</option>
+														<select class="form-control form-filter input-sm" name="gender" id="gender">
+															<option value="0">请选择...</option>
+															<option value="1">男</option>
+															<option value="2">女</option>
+															<option value="3">保密</option>
 														</select>
 													</td>
-													<td><input type="text" class="form-control form-filter input-sm" name="className" id="className"></td>
-													<td><input type="text" class="form-control form-filter input-sm" name="classOwner" id="classOwner"></td>
-													
+													<td><input type="text" class="form-control form-filter input-sm" name="phone1" id="phone1"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="phone2" id="phone2"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="wechat" id="wechat"></td>
+													<td><input type="text" class="form-control form-filter input-sm" name="email" id="email"></td>
 													<td>
-														<div class="input-group date date-picker margin-bottom-5" data-date-format="yyyy-mm-dd">
-															<input type="text" class="form-control form-filter input-sm" readonly name="create_date_from" placeholder="From" id="createDateFrom">
-															<span class="input-group-btn">
-															<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-															</span>
-														</div>
-														<div class="input-group date date-picker" data-date-format="yyyy-mm-dd">
-															<input type="text" class="form-control form-filter input-sm" readonly name="create_date_to" placeholder="To" id="createDateTo">
-															<span class="input-group-btn">
-															<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-															</span>
-														</div>
-													</td>
-													<td>
-														<div class="margin-bottom-5">
-															<input type="text" class="form-control form-filter input-sm" name="maxPersonFrom" placeholder="From" id="maxPersonFrom">
-														</div>
-														<input type="text" class="form-control form-filter input-sm" name="maxPersonTo" placeholder="To" id="maxPersonTo"/>
-													</td>
-													<td>
-														<select class="form-control form-filter input-sm" name="event_status" id="eventStatus">
-															<option value="0">选择...</option>
-															<option value="1">已创建</option>
-															<option value="2">招生中</option>
-															<option value="3">开课中</option>
-															<option value="4">已结业</option>
-															<option value="5">已解散</option>
+														<select class="form-control form-filter input-sm" name="memberStatus" id="memberStatus">
+															<option value="0">请选择...</option>
+															<option value="1">已申请</option>
+															<option value="2">已通过预审</option>
+															<option value="3">已激活</option>
+															<option value="4">未激活</option>
+															<option value="5">审查中</option>
+															<option value="6">已禁止</option>
 														</select>
 													</td>
 													<td>
 														<div class="margin-bottom-5">
 														<button class="btn btn-sm yellow filter-submit1 margin-bottom" onclick="filterSearch();"><i class="fa fa-search"></i> 查找</button>
 														</div>
-														<button class="btn btn-sm red filter-cancel1" onclick="filterReset();"><i class="fa fa-times"></i> 重置</button>
+														<button class="btn btn-sm red filter-cancel1" onclick="filterReset();"><i class="fa fa-times"></i> 清除</button>
 													</td>
 												</tr>
                                             </thead>
@@ -303,11 +251,10 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/global-validate.js"></script>
-<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/school/school-class.js"></script>
-<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/school/school-class-list.js"></script>
+<script type="text/javascript" src="${webapp_name}/assets/pages/scripts-local/member/member-list.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-SchoolClassList.init();
+MemberList.init();
 </script>
 </body>
 

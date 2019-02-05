@@ -15,7 +15,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.athensoft.base.dao.BaseDaoJdbcImpl;
-import com.athensoft.content.event.entity.Event;
 import com.athensoft.school.entity.SchoolClass;
 
 @Repository
@@ -26,7 +25,7 @@ public class SchoolClassDaoJdbcImpl extends BaseDaoJdbcImpl implements SchoolCla
 	
 	@Override
 	public List<SchoolClass> findAll() {
-		String sql = "select * from "+TABLE;
+		String sql = "SELECT * FROM "+TABLE;
 
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 
@@ -39,6 +38,22 @@ public class SchoolClassDaoJdbcImpl extends BaseDaoJdbcImpl implements SchoolCla
 		return x;
 	}
 	
+	@Override
+	public SchoolClass findByClassCode(String classCode) {
+		String sql = "SELECT * FROM "+TABLE +" WHERE class_code=:classCode";
+
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+		paramSource.addValue("classCode", classCode);
+		
+		SchoolClass x = new SchoolClass();
+		try {
+			x = jdbc.queryForObject(sql, paramSource, new SchoolClassRowMapper());
+		} catch (EmptyResultDataAccessException ex) {
+			x = null;
+		}
+		return x;
+	}
+
 	private static class SchoolClassRowMapper implements RowMapper<SchoolClass> {
 		public SchoolClass mapRow(ResultSet rs, int rowNumber) throws SQLException {
 			SchoolClass x = new SchoolClass();

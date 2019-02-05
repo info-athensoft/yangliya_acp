@@ -219,6 +219,287 @@
                         </div>
                     </div>
                     
+                    <div class="row">
+                        <div class="col-lg-6 col-xs-12 col-sm-12">
+                            <div class="portlet light ">
+                                <div class="portlet-title tabbable-line">
+                                    <div class="caption">
+                                        <i class="icon-bubbles font-dark hide"></i>
+                                        <span class="caption-subject font-dark bold uppercase">会员管理请求</span>
+                                    </div>
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#portlet_member_1" data-toggle="tab"> 新申请 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#portlet_member_2" data-toggle="tab"> 其它处理 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="portlet_member_1">
+                                            <div class="mt-comments">
+                                            	
+                                            	
+                                            	<c:forEach var="member" items="${listMemberRequest}">
+                                            		<div class="mt-comment">
+	                                                    <div class="mt-comment-img">
+	                                                        <img src="${webapp_name}/assets/layouts/layout2/img/avatar.png" /> </div>
+	                                                    <div class="mt-comment-body">
+	                                                        <div class="mt-comment-info">
+	                                                            <span class="mt-comment-author">${member.name1}&nbsp;&nbsp;${member.name2}</span>
+	                                                            <span class="mt-comment-date">${member.memberApplyDate}</span>
+	                                                        </div>
+	                                                        
+	                                                        <div class="mt-comment-text">
+		                                                        <c:choose>
+														         <c:when test = "${member.gender eq 1}">
+														            <c:set var="strGender" value="先生,"/>
+														         </c:when>
+														         <c:when test = "${member.gender eq 2}">
+														            <c:set var="strGender" value="女士,"/>
+														         </c:when>
+														         <c:otherwise>
+														         	<c:set var="strGender" value=""/> 
+														         </c:otherwise>
+														      	</c:choose>
+														      	${strGender}&nbsp;&nbsp;&nbsp;${member.occupation}&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+														      	${member.acctName}&nbsp;&nbsp;&nbsp;&nbsp;电话${member.phone1}&nbsp;&nbsp;&nbsp;&nbsp;微信${member.wechat}
+														    </div>
+	                                                        
+	                                                        <div class="mt-comment-details">
+	                                                            <span class="mt-comment-status mt-comment-status-approved">
+	                                                            	<c:choose>
+															         <c:when test = "${member.memberLevel eq 2}">
+															            <c:set var="strMemberLevel" value="普通会员"/>
+															         </c:when>
+															         <c:when test = "${member.memberLevel eq 3}">
+															            <c:set var="strMemberLevel" value="VIP会员"/>
+															         </c:when>
+															         <c:otherwise>
+															         	<c:set var="strMemberLevel" value=""/> 
+															         </c:otherwise>
+															      	</c:choose>
+															      	已提交申请&nbsp;&nbsp;&nbsp;${strMemberLevel}
+	                                                            </span>
+	                                                            <ul class="mt-comment-actions">
+	                                                                <li>
+	                                                                    <a href="${webapp_name}/member/edit.html?acctName=${member.acctName}"><strong>处理</strong></a>
+	                                                                </li>
+	                                                                <!-- 
+	                                                                <li>
+	                                                                    <a href="#">View</a>
+	                                                                </li>
+	                                                                <li>
+	                                                                    <a href="#">Delete</a>
+	                                                                </li> -->
+	                                                            </ul>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+                                            	</c:forEach>
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="portlet_member_2">
+                                            <div class="mt-comments">
+                                            
+                                            	<c:forEach var="member" items="${listMemberOtherRequest}">
+                                            		<div class="mt-comment">
+	                                                    <div class="mt-comment-img">
+	                                                        <img src="${webapp_name}/assets/layouts/layout2/img/avatar.png" /> </div>
+	                                                    <div class="mt-comment-body">
+	                                                        <div class="mt-comment-info">
+	                                                            <span class="mt-comment-author">${member.name1}&nbsp;&nbsp;${member.name2}</span>
+	                                                            
+	                                                            <c:choose>
+															         <c:when test = "${member.memberStatus eq 2}">
+															            <c:set var="strMemberStatus" value="缴纳会费"/>
+															            <span class="mt-comment-date">${member.memberApprovedDate}</span>
+															         </c:when>
+															         <c:when test = "${member.memberLevel eq 4}">
+															            <c:set var="strMemberStatus" value="过期续约"/>
+															            <span class="mt-comment-date">${member.memberInactiveDate}</span>
+															         </c:when>
+															         <c:when test = "${member.memberLevel eq 5}">
+															            <c:set var="strMemberStatus" value="异常或违规"/>
+															            <span class="mt-comment-date">${member.memberPendingDate}</span>
+															         </c:when>
+															         <c:otherwise>
+															         	<span class="mt-comment-date">${member.memberApplyDate}</span>
+															         </c:otherwise>
+															    </c:choose>
+	                                                            
+	                                                        </div>
+	                                                        
+	                                                        <div class="mt-comment-text">
+		                                                        <c:choose>
+														         <c:when test = "${member.gender eq 1}">
+														            <c:set var="strGender" value="先生,"/>
+														         </c:when>
+														         <c:when test = "${member.gender eq 2}">
+														            <c:set var="strGender" value="女士,"/>
+														         </c:when>
+														         <c:otherwise>
+														         	<c:set var="strGender" value=""/> 
+														         </c:otherwise>
+														      	</c:choose>
+														      	${strGender}&nbsp;&nbsp;&nbsp;${member.occupation},&nbsp;&nbsp;&nbsp;${member.acctName},&nbsp;&nbsp;&nbsp;电话${member.phone1},&nbsp;&nbsp;&nbsp;微信${member.wechat}
+														    </div>
+	                                                        
+	                                                        <div class="mt-comment-details">
+	                                                            <span class="mt-comment-status mt-comment-status-rejected">
+	                                                            	<c:choose>
+															         <c:when test = "${member.memberStatus eq 2}">
+															            <c:set var="strMemberStatus" value="缴纳会费"/>
+															         </c:when>
+															         <c:when test = "${member.memberStatus eq 4}">
+															            <c:set var="strMemberStatus" value="过期续约，缴纳会费"/>
+															         </c:when>
+															         <c:when test = "${member.memberStatus eq 5}">
+															            <c:set var="strMemberStatus" value="异常或违规"/>
+															         </c:when>
+															         <c:otherwise>
+															         	<c:set var="strMemberStatus" value="其它事宜"/>
+															         </c:otherwise>
+															    	</c:choose>
+															      	待处理&nbsp;&nbsp;&nbsp;${strMemberStatus}
+	                                                            </span>
+	                                                            <ul class="mt-comment-actions">
+	                                                                <li>
+	                                                                    <a href="${webapp_name}/member/edit.html?acctName=${member.acctName}"><strong>处理</strong></a>
+	                                                                </li>
+	                                                                <!-- 
+	                                                                <li>
+	                                                                    <a href="#">View</a>
+	                                                                </li>
+	                                                                <li>
+	                                                                    <a href="#">Delete</a>
+	                                                                </li> -->
+	                                                            </ul>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+                                            	</c:forEach>
+                                            
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xs-12 col-sm-12">
+                            <div class="portlet light ">
+                                <div class="portlet-title tabbable-line">
+                                    <div class="caption">
+                                        <i class="icon-bubbles font-dark hide"></i>
+                                        <span class="caption-subject font-dark bold uppercase">广告管理请求</span>
+                                    </div>
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#portlet_ad_1" data-toggle="tab"> 新增申请 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#portlet_ad_2" data-toggle="tab"> 变更申请 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="portlet_ad_1">
+                                            <!-- BEGIN: Comments -->
+                                            <div class="mt-comments">
+                                            
+                                            	<c:forEach var="adRequest" items="${listAdRequest}">
+                                            
+                                                <div class="mt-comment">
+                                                    <div class="mt-comment-img">
+                                                        <img src="${webapp_name}/assets/pages/media/users/avatar1.jpg" /> </div>
+                                                    <div class="mt-comment-body">
+                                                        <div class="mt-comment-info">
+                                                            <span class="mt-comment-author">${adRequest.requestName}</span>
+                                                            <span class="mt-comment-date">${adRequest.requestDate}</span>
+                                                        </div>
+                                                        <div class="mt-comment-text"> ${adRequest.acctName} </div>
+                                                        <div class="mt-comment-details">
+                                                            <span class="mt-comment-status mt-comment-status-approved">
+																已申请发布广告
+															</span>
+                                                            <ul class="mt-comment-actions">
+                                                                <li>
+                                                                    <a href="#">Quick Edit</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">View</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Delete</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </c:forEach>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="portlet_ad_2">
+                                            <div class="mt-comments">
+                                                <c:forEach var="adRequest" items="${listAdOtherRequest}">
+                                            
+                                                <div class="mt-comment">
+                                                    <div class="mt-comment-img">
+                                                        <img src="${webapp_name}/assets/pages/media/users/avatar1.jpg" /> </div>
+                                                    <div class="mt-comment-body">
+                                                        <div class="mt-comment-info">
+                                                            <span class="mt-comment-author">${adRequest.requestName}</span>
+                                                            <span class="mt-comment-date">${adRequest.requestDate}</span>
+                                                        </div>
+                                                        <div class="mt-comment-text"> ${adRequest.acctName} </div>
+                                                        <div class="mt-comment-details">
+                                                            <span class="mt-comment-status mt-comment-status-rejected">
+																<c:choose>
+															         <c:when test = "${adRequest.requestType eq 1}">
+															            <c:set var="strRequestType" value="广告咨询"/>
+															         </c:when>
+															         <c:when test = "${adRequest.requestType eq 3}">
+															            <c:set var="strRequestType" value="广告修改申请"/>
+															         </c:when>
+															         <c:when test = "${adRequest.requestType eq 4}">
+															            <c:set var="strRequestType" value="广告撤回申请"/>
+															         </c:when>
+															         <c:otherwise>
+															         	<c:set var="strRequestType" value="其它事宜"/>
+															         </c:otherwise>
+															    	</c:choose>
+															      	待处理&nbsp;&nbsp;&nbsp;${strRequestType}
+															</span>
+                                                            <ul class="mt-comment-actions">
+                                                                <li>
+                                                                    <a href="#">Quick Edit</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">View</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">Delete</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </c:forEach>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="row">
                         
@@ -227,7 +508,7 @@
                                 <div class="portlet-title">
                                     <div class="caption caption-md">
                                         <i class="icon-bar-chart font-dark hide"></i>
-                                        <span class="caption-subject font-dark bold uppercase">学校新闻与活动</span>
+                                        <span class="caption-subject font-dark bold uppercase">新闻与活动</span>
                                         <span class="caption-helper"></span>
                                     </div>
                                     <div class="inputs">
@@ -300,7 +581,7 @@
                                 <div class="portlet-title">
                                     <div class="caption caption-md">
                                         <i class="icon-bar-chart font-dark hide"></i>
-                                        <span class="caption-subject font-dark bold uppercase">管理班级留言</span>
+                                        <span class="caption-subject font-dark bold uppercase">管理新闻评论</span>
                                         <span class="caption-helper"></span>
                                     </div>
                                     <div class="inputs">
@@ -322,7 +603,7 @@
 	                                                <div class="item-head">
 	                                                    <div class="item-details">
 	                                                        <img class="item-pic rounded" src="${webapp_name}/assets/layouts/layout2/img/avatar.png">
-	                                                        <a href="${webapp_name}/events/news/edit?eventUUID=${review.eventUUID}" class="item-name primary-link">管理该留言</a><br/>
+	                                                        <a href="${webapp_name}/events/news/edit?eventUUID=${review.eventUUID}" class="item-name primary-link">管理该评论</a><br/>
 	                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	                                                        <span class="item-label">${review.reviewDatetime}</span>
 	                                                    </div>
