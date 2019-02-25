@@ -137,6 +137,7 @@ var SchoolClassEdit = function (option) {
         });
     }
 
+    /*
     var handleHistory = function () {
 
         var grid = new Datatable();
@@ -170,6 +171,8 @@ var SchoolClassEdit = function (option) {
         });
     } 
 
+    */
+    
     var initComponents = function () {
         //init datepickers
         $('.date-picker').datepicker({
