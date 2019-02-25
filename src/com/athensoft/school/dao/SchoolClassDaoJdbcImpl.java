@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.athensoft.base.dao.BaseDaoJdbcImpl;
@@ -52,6 +54,48 @@ public class SchoolClassDaoJdbcImpl extends BaseDaoJdbcImpl implements SchoolCla
 			x = null;
 		}
 		return x;
+	}
+
+	@Override
+	public int create(SchoolClass x) {
+		StringBuffer sbf = new StringBuffer();
+		sbf.append("INSERT INTO ").append(TABLE);
+		sbf.append(" (");
+		sbf.append(" class_code,");
+		sbf.append(" class_name,");
+		sbf.append(" class_type,");
+		sbf.append(" class_owner,");
+		sbf.append(" create_date,");
+		sbf.append(" max_person,");
+		sbf.append(" class_desc,");
+		sbf.append(" class_status");
+		sbf.append(" ) VALUES(");
+		sbf.append(" :class_code,");
+		sbf.append(" :class_name,");
+		sbf.append(" :class_type,");
+		sbf.append(" :class_owner,");
+		sbf.append(" :create_date,");
+		sbf.append(" :max_person,");
+		sbf.append(" :class_desc,");
+		sbf.append(" :class_status");
+		sbf.append(")");
+		
+		String sql = sbf.toString();
+
+		MapSqlParameterSource paramSource = new MapSqlParameterSource();
+		paramSource.addValue("class_code", x.getClassCode());
+		paramSource.addValue("class_name", x.getClassName());
+		paramSource.addValue("class_type", x.getClassType());
+		paramSource.addValue("class_owner", x.getClassOwner());
+		paramSource.addValue("create_date", Date.from(x.getCreateDate().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		paramSource.addValue("max_person", x.getMaxPerson());
+		paramSource.addValue("class_desc", x.getClassDesc());
+		paramSource.addValue("class_status", x.getClassStatus());
+
+		KeyHolder keyholder = new GeneratedKeyHolder();
+
+		return jdbc.update(sql, paramSource, keyholder);
+		
 	}
 
 	private static class SchoolClassRowMapper implements RowMapper<SchoolClass> {

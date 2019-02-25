@@ -13,7 +13,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html>
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
     <head>
@@ -135,7 +135,7 @@
                                     <div class="caption">
                                         	班级列表 <span class="caption-helper"></span></div>
                                     <div class="actions">
-                                        <a href="${webapp_name}/events/news/create.html" class="btn btn-circle btn-info">
+                                        <a href="${webapp_name}/school/class/create.html" class="btn btn-circle btn-info">
                                             <i class="fa fa-plus"></i><span class="hidden-xs"> 新增班级 </span>
                                         </a>
                                         <!-- 

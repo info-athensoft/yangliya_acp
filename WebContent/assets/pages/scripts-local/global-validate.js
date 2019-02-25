@@ -3,13 +3,14 @@
 
 
 function isNonNegativeInteger(value){
-	var reg = new RegExp("^[0-9]*$");
-    if(!reg.test(value)){
-    	alert("WARNING: Not a Non-negative integer" + " @global-validate.js");
-    	return false;
-    }else{
-    	//alert("INFO: A Non-negative integer detected");
+//	var reg = new RegExp("^[0-9]*$");
+	var reg = new RegExp("[[1−9]+[0−9]*]*");
+    if(reg.test(value)){
     	return true;
+    }else{
+    	alert("WARNING: Not a Non-negative integer" + " @global-validate.js");
+    	//alert("INFO: A Non-negative integer detected");
+    	return false;
     }
 }
 

@@ -8,4 +8,6 @@ public interface SchoolClassDao {
 	public List<SchoolClass> findAll();
 	
 	public SchoolClass findByClassCode(String classCode);
+	
+	public int create(SchoolClass schoolClass);
 }

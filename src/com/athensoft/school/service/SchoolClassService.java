@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.athensoft.content.event.entity.News;
 import com.athensoft.school.dao.SchoolClassDao;
 import com.athensoft.school.entity.SchoolClass;
 import com.athensoft.school.entity.SchoolClassAction;
@@ -16,7 +15,7 @@ import com.athensoft.school.entity.SchoolClassType;
 
 @Service
 public class SchoolClassService {
-
+	
 	@Autowired
 	@Qualifier("schoolClassDaoJdbcImpl")
 	private SchoolClassDao schoolClassDao;
@@ -28,6 +27,12 @@ public class SchoolClassService {
 	public SchoolClass getSchoolClassByClassCode(String classCode){
 		return schoolClassDao.findByClassCode(classCode);
 	}
+	
+	public void createSchoolClass(SchoolClass schoolClass){
+		this.schoolClassDao.create(schoolClass);
+		return;
+	}
+	
 	
 	/**
 	 * @param listSchoolClass
