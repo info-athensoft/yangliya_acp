@@ -466,7 +466,7 @@ function changeMediaName(object,mediaId,eventUUID) {
     {
 			mediaId    :    mediaId,
 			eventUUID  :    eventUUID,
-			mediaName :    mediaName
+			mediaName  :    mediaName
     };
 	
 	var param = JSON.stringify(mediaObject);
